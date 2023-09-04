@@ -6,6 +6,10 @@ public class GuyScript : MonoBehaviour
 {
     public Rigidbody2D guybody;
     public float jumpStrength;
+    public float velo_x;
+    public float velo_y;
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,19 +18,27 @@ public class GuyScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.W) == true)
-        {
-            guybody.velocity = Vector2.up*jumpStrength;
-        }
+    {   
+        velo_x = 0;
+        velo_y = 0;
 
-        if (Input.GetKeyDown(KeyCode.D) == true)
+        if (Input.GetKey(KeyCode.W) == true)
         {
-            guybody.velocity = Vector2.right * jumpStrength;
+            velo_y += 1;
         }
-        if (Input.GetKeyDown(KeyCode.A) == true)
+        if (Input.GetKey(KeyCode.D) == true)
         {
-            guybody.velocity = Vector2.left * jumpStrength;
+            velo_x += 1;
         }
+        if (Input.GetKey(KeyCode.A) == true)
+        {
+            velo_x -= 1;
+        }
+        if (Input.GetKey(KeyCode.S) == true)
+        {
+            velo_y -= 1;
+        }
+        guybody.velocity = new Vector2(velo_x,velo_y);
+        
     }
 }
