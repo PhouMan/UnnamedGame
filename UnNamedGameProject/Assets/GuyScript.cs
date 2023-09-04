@@ -15,18 +15,26 @@ public class GuyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W) == true)
+        if (Input.GetKey(KeyCode.W) == true)
         {
             guybody.velocity = Vector2.up*jumpStrength;
         }
 
-        if (Input.GetKeyDown(KeyCode.D) == true)
+        else if (Input.GetKey(KeyCode.D) == true)
         {
             guybody.velocity = Vector2.right * jumpStrength;
         }
-        if (Input.GetKeyDown(KeyCode.A) == true)
+        else if (Input.GetKey(KeyCode.A) == true)
         {
             guybody.velocity = Vector2.left * jumpStrength;
+        }
+        else if (Input.GetKey(KeyCode.S) == true)
+        {
+            guybody.velocity = Vector2.down * jumpStrength;
+        }
+        else
+        {
+            guybody.velocity = Vector2.zero;
         }
     }
 }
