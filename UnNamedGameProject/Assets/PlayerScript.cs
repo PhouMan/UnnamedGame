@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
     float horizontalSpeed;
     float verticalSpeed;
     Rigidbody2D guybody;
+    public Vector2 playerPosition;
     public float moveSpeed = 5;
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,7 @@ public class PlayerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        playerPosition = guybody.position;
         horizontalSpeed = Input.GetAxisRaw("Horizontal");
         verticalSpeed = Input.GetAxisRaw("Vertical");
     }
