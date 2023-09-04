@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GuyScript : MonoBehaviour
+public class PlayerScript : MonoBehaviour
 {
     float horizontalSpeed;
     float verticalSpeed;
@@ -17,7 +17,7 @@ public class GuyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
         horizontalSpeed = Input.GetAxisRaw("Horizontal");
         verticalSpeed = Input.GetAxisRaw("Vertical");
     }
