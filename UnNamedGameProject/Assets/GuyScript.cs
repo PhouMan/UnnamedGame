@@ -26,8 +26,8 @@ public class GuyScript : MonoBehaviour
     {
         if (horizontalSpeed != 0 && verticalSpeed != 0)
         {
-            horizontalSpeed *= 0.2f;
-            verticalSpeed *= 0.2f;
+            horizontalSpeed *= 0.7f;
+            verticalSpeed *= 0.7f;
         }
         guybody.velocity = new Vector2(horizontalSpeed * moveSpeed, verticalSpeed * moveSpeed);
     }

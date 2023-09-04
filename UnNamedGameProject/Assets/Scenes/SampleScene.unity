@@ -183,7 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guybody: {fileID: 128844487}
-  jumpStrength: 10
+  moveSpeed: 5
 --- !u!58 &128844489
 CircleCollider2D:
   m_ObjectHideFlags: 0
