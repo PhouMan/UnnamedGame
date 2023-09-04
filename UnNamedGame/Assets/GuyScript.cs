@@ -15,9 +15,18 @@ public class GuyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) == true)
+        if (Input.GetKeyDown(KeyCode.W) == true)
         {
             guybody.velocity = Vector2.up*jumpStrength;
+        }
+
+        if (Input.GetKeyDown(KeyCode.D) == true)
+        {
+            guybody.velocity = Vector2.right * jumpStrength;
+        }
+        if (Input.GetKeyDown(KeyCode.A) == true)
+        {
+            guybody.velocity = Vector2.left * jumpStrength;
         }
     }
 }
