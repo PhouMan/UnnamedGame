@@ -4,37 +4,31 @@ using UnityEngine;
 
 public class GuyScript : MonoBehaviour
 {
-    public Rigidbody2D guybody;
-    public float jumpStrength;
+    float horizontalSpeed;
+    float verticalSpeed;
+    Rigidbody2D guybody;
+    public float moveSpeed;
     // Start is called before the first frame update
     void Start()
     {
-        
+        guybody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.W) == true)
-        {
-            guybody.velocity = Vector2.up*jumpStrength;
-        }
+       
+        horizontalSpeed = Input.GetAxisRaw("Horizontal");
+        verticalSpeed = Input.GetAxisRaw("Vertical");
+    }
 
-        else if (Input.GetKey(KeyCode.D) == true)
+    void FixedUpdate()
+    {
+        if (horizontalSpeed != 0 && verticalSpeed != 0)
         {
-            guybody.velocity = Vector2.right * jumpStrength;
+            horizontalSpeed *= 0.2f;
+            verticalSpeed *= 0.2f;
         }
-        else if (Input.GetKey(KeyCode.A) == true)
-        {
-            guybody.velocity = Vector2.left * jumpStrength;
-        }
-        else if (Input.GetKey(KeyCode.S) == true)
-        {
-            guybody.velocity = Vector2.down * jumpStrength;
-        }
-        else
-        {
-            guybody.velocity = Vector2.zero;
-        }
+        guybody.velocity = new Vector2(horizontalSpeed * moveSpeed, verticalSpeed * moveSpeed);
     }
 }
