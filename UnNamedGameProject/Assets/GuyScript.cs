@@ -7,7 +7,7 @@ public class GuyScript : MonoBehaviour
     float horizontalSpeed;
     float verticalSpeed;
     Rigidbody2D guybody;
-    public float moveSpeed;
+    public float moveSpeed = 5;
     // Start is called before the first frame update
     void Start()
     {
