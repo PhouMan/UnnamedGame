@@ -18,7 +18,7 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 playerPosition = GameObject.Find("SampleGuy").GetComponent<PlayerScript>().playerPosition;
+        Vector2 playerPosition = GameObject.Find("PlayerBody").GetComponent<PlayerScript>().playerPosition;
         guybody.position = Vector2.Lerp(guybody.position,playerPosition,Time.deltaTime);
 
 
